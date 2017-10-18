@@ -1,0 +1,167 @@
+﻿Version=6.8
+NumberOfModules=1
+Module1=Starter
+Build1=Default,b4a.example
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=8
+File1=banner.bal
+File2=intertitial.bal
+File3=mrect.bal
+File4=native.bal
+File5=pic2.png
+File6=sample.jpg
+File7=sample-main.jpg
+File8=tabhost.bal
+NumberOfLibraries=2
+Library1=core
+Library2=magnet-android-sdk-b4a-4.3.4
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: MagnetSDK B4A Sample
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	
+End Sub
+
+Sub Globals
+	Dim Magnet As MagnetSDK
+	Dim TabHost1 As TabHost
+	Dim BannerPanel As Panel
+	Dim MRectPanel As Panel
+	Dim NativeScrollView As ScrollView
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	
+	Magnet.Initialize()
+	Magnet.SetTestMode(True)
+	
+	Activity.LoadLayout("tabhost")
+	TabHost1.AddTab("Banner", "banner")
+	TabHost1.AddTab("MRect", "mrect")
+	TabHost1.AddTab("Interstitial", "intertitial")
+	TabHost1.AddTab("Native", "native")
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub FillScrollView
+	Dim AdBitmap As Bitmap
+	Dim SampleBitmap As Bitmap
+	Dim SampleMainBitmap As Bitmap
+	
+	AdBitmap.Initialize(File.DirAssets, "pic2.png")
+	SampleBitmap.Initialize(File.DirAssets, "sample.jpg")
+	SampleMainBitmap.Initialize(File.DirAssets, "sample-main.jpg")
+	
+	NativeScrollView.Panel.RemoveAllViews
+	NativeScrollView.Panel.Width = 100%x
+	NativeScrollView.Panel.Height = 320dip * 6
+	For i = 0 To 5
+		Dim Icon As ImageView
+		Dim Image As ImageView
+		Dim Indicative As ImageView
+		Dim Title As Label
+		Dim Description As Label
+		Dim CallToAction As Button
+		Dim NativePanel As Panel
+		Dim AdIndicative As BitmapDrawable
+		Dim SampleDrawable As BitmapDrawable
+		Dim ItemPanel As Panel
+		
+		Icon.Initialize("")
+		Image.Initialize("")
+		Indicative.Initialize("")
+		Title.Initialize("")
+		Description.Initialize("")
+		CallToAction.Initialize("")
+		NativePanel.Initialize("")
+		ItemPanel.Initialize("panel")
+		AdIndicative.Initialize(AdBitmap)
+		SampleDrawable.Initialize(SampleBitmap)
+	
+		Title.Gravity = Bit.Or(Gravity.NO_GRAVITY, Gravity.RIGHT)
+		Indicative.Background = AdIndicative
+		
+		If i Mod 3 = 2 Then
+			NativePanel.AddView(Icon, 100%x-90dip, 5dip, 60dip, 60dip)
+			NativePanel.AddView(Title, 50dip, 5dip, 100%x-150dip, 100dip)
+			NativePanel.AddView(Indicative, 5dip, 0, 25dip, 30dip)
+			NativePanel.AddView(Description, 10dip, 30dip, 100%x-110dip, 100dip)
+			NativePanel.AddView(Image, 5dip, 80dip, 100%x-30dip, 180dip)
+			NativePanel.AddView(CallToAction, 5dip, 265dip, 100%x - 30dip, 50dip)
+			
+			Magnet.BindView(Title, Description, CallToAction, Icon, Image, Indicative, NativePanel)
+			Magnet.LoadNative("YourAdUnitid", ItemPanel)
+		Else
+			Title.Text = "عنوان"
+			Description.Text = "توضیحات"
+			CallToAction.Text = "کلیک کنید"
+			
+			Icon.Background = SampleDrawable
+			Image.Bitmap = SampleMainBitmap
+			
+			ItemPanel.AddView(Icon, 100%x-90dip, 5dip, 60dip, 60dip)
+			ItemPanel.AddView(Title, 10dip, 5dip, 100%x-110dip, 100dip)
+			ItemPanel.AddView(Description, 10dip, 25dip, 100%x-110dip, 100dip)
+			ItemPanel.AddView(Image, 5dip, 80dip, 100%x-30dip, 180dip)
+			ItemPanel.AddView(CallToAction, 5dip, 265dip, 100%x - 30dip, 50dip)
+		End If
+		NativeScrollView.Panel.AddView(ItemPanel, 0, i * 320dip, 100%x, 315dip)
+	Next
+End Sub
+
+Sub LoadBanner_Click
+	Dim panel As Panel
+	panel.Initialize("panel")
+	BannerPanel.AddView(panel, 0, 0, 100%x, 10%y)
+	panel.Visible = True
+	panel.BringToFront
+	Magnet.LoadMobileBanner("YourAdUnitid", panel)
+End Sub
+
+Sub LoadMRect_Click
+	Dim panel As Panel
+	panel.Initialize("panel")
+	MRectPanel.AddView(panel, 50%x-150dip, 0, 300dip, 250dip)
+	panel.Visible = True
+	panel.BringToFront
+	Magnet.LoadMRect("YourAdUnitid", panel, Magnet.SIZE_300_250)
+End Sub
+
+Sub LoadInterstitial_Click
+	Magnet.LoadInterstitial("YourAdUnitid")
+End Sub
+
+Sub on_ad_available
+	Log("AdAvailable")
+	Magnet.ShowInterstitial()
+End Sub
+
+Sub on_ad_receive_fail
+	Log("AdReceiveFail")
+End Sub
+
+Sub TabHost1_TabChanged
+	If TabHost1.CurrentTab = 3 Then
+		FillScrollView
+	End If
+End Sub
