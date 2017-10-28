@@ -1,7 +1,7 @@
 b4a.example
 0
 0
-main,activity_create,1,1,27,37
+main,activity_create,1,0,27,37
 ,magnet,,tabhost1,,bannerpanel,,mrectpanel,,nativescrollview
 ,tabhost1,,bannerpanel,,mrectpanel,,nativescrollview
 
@@ -13,7 +13,7 @@ main,activity_resume,0,0,39,41
 
 
 
-main,fillscrollview,0,1,47,111
+main,fillscrollview,0,0,47,111
 ,nativescrollview,,magnet
 
 
@@ -21,19 +21,19 @@ main,globals,0,1,19,25
 
 
 
-main,loadbanner_click,0,1,113,120
+main,loadbanner_click,0,0,113,120
 ,bannerpanel,,magnet
 
 
-main,loadinterstitial_click,0,1,131,133
+main,loadinterstitial_click,0,0,131,133
 ,magnet
 
 
-main,loadmrect_click,0,1,122,129
+main,loadmrect_click,0,0,122,129
 ,mrectpanel,,magnet
 
 
-main,on_ad_available,0,1,135,138
+main,on_ad_available,0,0,135,138
 ,magnet
 
 
