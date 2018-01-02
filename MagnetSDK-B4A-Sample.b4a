@@ -4,18 +4,19 @@ Module1=Starter
 Build1=Default,b4a.example
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.ACCESS_NETWORK_STATE)~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.ACCESS_COARSE_LOCATION)~\n~AddApplicationText(~\n~<activity~\n~    android:name="com.magnetadservices.sdk.MagnetInterstitialActivity"~\n~    android:theme="@android:style/Theme.Translucent.NoTitleBar">~\n~</activity>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=8
+NumberOfFiles=9
 File1=banner.bal
-File2=intertitial.bal
-File3=mrect.bal
-File4=native.bal
-File5=pic2.png
-File6=sample.jpg
-File7=sample-main.jpg
-File8=tabhost.bal
+File2=express.bal
+File3=intertitial.bal
+File4=mrect.bal
+File5=native.bal
+File6=pic2.png
+File7=sample.jpg
+File8=sample-main.jpg
+File9=tabhost.bal
 NumberOfLibraries=2
 Library1=core
-Library2=magnet-android-sdk-b4a-4.3.4
+Library2=magnet-android-sdk-b4a-5.0.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: MagnetSDK B4A Sample
@@ -40,11 +41,11 @@ Sub Globals
 	Dim TabHost1 As TabHost
 	Dim BannerPanel As Panel
 	Dim MRectPanel As Panel
+	Dim ExpressPanel As Panel
 	Dim NativeScrollView As ScrollView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	
 	Magnet.Initialize()
 	Magnet.SetTestMode(True)
 	
@@ -53,6 +54,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	TabHost1.AddTab("MRect", "mrect")
 	TabHost1.AddTab("Interstitial", "intertitial")
 	TabHost1.AddTab("Native", "native")
+	TabHost1.AddTab("Native Express", "express")
 End Sub
 
 Sub Activity_Resume
@@ -110,7 +112,7 @@ Sub FillScrollView
 			NativePanel.AddView(CallToAction, 5dip, 265dip, 100%x - 30dip, 50dip)
 			
 			Magnet.BindView(Title, Description, CallToAction, Icon, Image, Indicative, NativePanel)
-			Magnet.LoadNative("YourAdUnitid", ItemPanel)
+			Magnet.LoadNative("YourAdUnitId", ItemPanel)
 		Else
 			Title.Text = "عنوان"
 			Description.Text = "توضیحات"
@@ -135,7 +137,7 @@ Sub LoadBanner_Click
 	BannerPanel.AddView(panel, 0, 0, 100%x, 10%y)
 	panel.Visible = True
 	panel.BringToFront
-	Magnet.LoadMobileBanner("YourAdUnitid", panel)
+	Magnet.LoadMobileBanner("YourAdUnitId", panel)
 End Sub
 
 Sub LoadMRect_Click
@@ -144,11 +146,20 @@ Sub LoadMRect_Click
 	MRectPanel.AddView(panel, 50%x-150dip, 0, 300dip, 250dip)
 	panel.Visible = True
 	panel.BringToFront
-	Magnet.LoadMRect("YourAdUnitid", panel, Magnet.SIZE_300_250)
+	Magnet.LoadMRect("YourAdUnitId", panel, Magnet.SIZE_MEDIUM_RECTANGLE)
+End Sub
+
+Sub LoadExpress_Click
+	Dim panel As Panel
+	panel.Initialize("panel")
+	ExpressPanel.AddView(panel, 50%x-150dip, 0, 300dip, 250dip)
+	panel.Visible = True
+	panel.BringToFront
+	Magnet.LoadNativeExpressWithCustomSize("YourAdUnitId", panel, 300, 200)
 End Sub
 
 Sub LoadInterstitial_Click
-	Magnet.LoadInterstitial("YourAdUnitid")
+	Magnet.LoadInterstitial("YourAdUnitId")
 End Sub
 
 Sub on_ad_available
