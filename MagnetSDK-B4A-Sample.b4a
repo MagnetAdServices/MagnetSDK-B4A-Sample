@@ -1,6 +1,7 @@
 ﻿Version=6.8
-NumberOfModules=1
+NumberOfModules=2
 Module1=Starter
+Module2=NewActivity
 Build1=Default,b4a.example
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.ACCESS_NETWORK_STATE)~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.ACCESS_COARSE_LOCATION)~\n~AddApplicationText(~\n~<activity~\n~    android:name="com.magnetadservices.sdk.MagnetInterstitialActivity"~\n~    android:theme="@android:style/Theme.Translucent.NoTitleBar">~\n~</activity>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
 IconFile=
@@ -129,6 +130,10 @@ Sub FillScrollView
 		End If
 		NativeScrollView.Panel.AddView(ItemPanel, 0, i * 320dip, 100%x, 315dip)
 	Next
+End Sub
+
+Sub LoadInActivity_Click
+	StartActivity(NewActivity)
 End Sub
 
 Sub LoadBanner_Click

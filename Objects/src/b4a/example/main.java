@@ -336,6 +336,7 @@ public static void initializeProcessGlobals() {
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
+vis = vis | (newactivity.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -360,41 +361,58 @@ public static void killProgram() {
 				__a.finish();}
 
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+ {
+            Activity __a = null;
+            if (newactivity.previousOne != null) {
+				__a = newactivity.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(newactivity.mostCurrent == null ? null : newactivity.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public com.magnetadservices.facade.MagnetB4A_Facade _magnet = null;
 public anywheresoftware.b4a.objects.TabHostWrapper _tabhost1 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _bannerpanel = null;
 public anywheresoftware.b4a.objects.PanelWrapper _mrectpanel = null;
+public anywheresoftware.b4a.objects.PanelWrapper _expresspanel = null;
 public anywheresoftware.b4a.objects.ScrollViewWrapper _nativescrollview = null;
 public b4a.example.starter _starter = null;
+public b4a.example.newactivity _newactivity = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime});
 RDebugUtils.currentLine=131072;
  //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="Magnet.Initialize()";
+RDebugUtils.currentLine=131073;
+ //BA.debugLineNum = 131073;BA.debugLine="Magnet.Initialize()";
 mostCurrent._magnet.Initialize(mostCurrent.activityBA);
-RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="Magnet.SetTestMode(True)";
+RDebugUtils.currentLine=131074;
+ //BA.debugLineNum = 131074;BA.debugLine="Magnet.SetTestMode(True)";
 mostCurrent._magnet.SetTestMode(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=131077;
- //BA.debugLineNum = 131077;BA.debugLine="Activity.LoadLayout(\"tabhost\")";
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="Activity.LoadLayout(\"tabhost\")";
 mostCurrent._activity.LoadLayout("tabhost",mostCurrent.activityBA);
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="TabHost1.AddTab(\"Banner\", \"banner\")";
+RDebugUtils.currentLine=131077;
+ //BA.debugLineNum = 131077;BA.debugLine="TabHost1.AddTab(\"Banner\", \"banner\")";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Banner","banner");
-RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="TabHost1.AddTab(\"MRect\", \"mrect\")";
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="TabHost1.AddTab(\"MRect\", \"mrect\")";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"MRect","mrect");
-RDebugUtils.currentLine=131080;
- //BA.debugLineNum = 131080;BA.debugLine="TabHost1.AddTab(\"Interstitial\", \"intertitial\")";
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="TabHost1.AddTab(\"Interstitial\", \"intertitial\")";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Interstitial","intertitial");
-RDebugUtils.currentLine=131081;
- //BA.debugLineNum = 131081;BA.debugLine="TabHost1.AddTab(\"Native\", \"native\")";
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="TabHost1.AddTab(\"Native\", \"native\")";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Native","native");
+RDebugUtils.currentLine=131081;
+ //BA.debugLineNum = 131081;BA.debugLine="TabHost1.AddTab(\"Native Express\", \"express\")";
+mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Native Express","express");
 RDebugUtils.currentLine=131082;
  //BA.debugLineNum = 131082;BA.debugLine="End Sub";
 return "";
@@ -561,8 +579,8 @@ RDebugUtils.currentLine=327726;
  //BA.debugLineNum = 327726;BA.debugLine="Magnet.BindView(Title, Description, CallToActio";
 mostCurrent._magnet.BindView(mostCurrent.activityBA,(android.widget.TextView)(_title.getObject()),(android.widget.TextView)(_description.getObject()),(android.widget.Button)(_calltoaction.getObject()),(android.widget.ImageView)(_icon.getObject()),(android.widget.ImageView)(_image.getObject()),(android.widget.ImageView)(_indicative.getObject()),(android.view.ViewGroup)(_nativepanel.getObject()));
 RDebugUtils.currentLine=327727;
- //BA.debugLineNum = 327727;BA.debugLine="Magnet.LoadNative(\"YourAdUnitid\", ItemPanel)";
-mostCurrent._magnet.LoadNative(mostCurrent.activityBA,"YourAdUnitid",(android.view.ViewGroup)(_itempanel.getObject()));
+ //BA.debugLineNum = 327727;BA.debugLine="Magnet.LoadNative(\"YourAdUnitId\", ItemPanel)";
+mostCurrent._magnet.LoadNative(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_itempanel.getObject()));
  }else {
 RDebugUtils.currentLine=327729;
  //BA.debugLineNum = 327729;BA.debugLine="Title.Text = \"عنوان\"";
@@ -627,23 +645,65 @@ RDebugUtils.currentLine=393221;
  //BA.debugLineNum = 393221;BA.debugLine="panel.BringToFront";
 _panel.BringToFront();
 RDebugUtils.currentLine=393222;
- //BA.debugLineNum = 393222;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitid\", panel)";
-mostCurrent._magnet.LoadMobileBanner(mostCurrent.activityBA,"YourAdUnitid",(android.view.ViewGroup)(_panel.getObject()));
+ //BA.debugLineNum = 393222;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitId\", panel)";
+mostCurrent._magnet.LoadMobileBanner(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()));
 RDebugUtils.currentLine=393223;
  //BA.debugLineNum = 393223;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadexpress_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadexpress_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadexpress_click", null);
+anywheresoftware.b4a.objects.PanelWrapper _panel = null;
+RDebugUtils.currentLine=524288;
+ //BA.debugLineNum = 524288;BA.debugLine="Sub LoadExpress_Click";
+RDebugUtils.currentLine=524289;
+ //BA.debugLineNum = 524289;BA.debugLine="Dim panel As Panel";
+_panel = new anywheresoftware.b4a.objects.PanelWrapper();
+RDebugUtils.currentLine=524290;
+ //BA.debugLineNum = 524290;BA.debugLine="panel.Initialize(\"panel\")";
+_panel.Initialize(mostCurrent.activityBA,"panel");
+RDebugUtils.currentLine=524291;
+ //BA.debugLineNum = 524291;BA.debugLine="ExpressPanel.AddView(panel, 50%x-150dip, 0, 300di";
+mostCurrent._expresspanel.AddView((android.view.View)(_panel.getObject()),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150))),(int) (0),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (250)));
+RDebugUtils.currentLine=524292;
+ //BA.debugLineNum = 524292;BA.debugLine="panel.Visible = True";
+_panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=524293;
+ //BA.debugLineNum = 524293;BA.debugLine="panel.BringToFront";
+_panel.BringToFront();
+RDebugUtils.currentLine=524294;
+ //BA.debugLineNum = 524294;BA.debugLine="Magnet.LoadNativeExpressWithCustomSize(\"YourAdUni";
+mostCurrent._magnet.LoadNativeExpressWithCustomSize(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),(int) (300),(int) (200));
+RDebugUtils.currentLine=524295;
+ //BA.debugLineNum = 524295;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadinactivity_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinactivity_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadinactivity_click", null);
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Sub LoadInActivity_Click";
+RDebugUtils.currentLine=1638401;
+ //BA.debugLineNum = 1638401;BA.debugLine="StartActivity(NewActivity)";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._newactivity.getObject()));
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadinterstitial_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinterstitial_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "loadinterstitial_click", null);
-RDebugUtils.currentLine=524288;
- //BA.debugLineNum = 524288;BA.debugLine="Sub LoadInterstitial_Click";
-RDebugUtils.currentLine=524289;
- //BA.debugLineNum = 524289;BA.debugLine="Magnet.LoadInterstitial(\"YourAdUnitid\")";
-mostCurrent._magnet.LoadInterstitial(mostCurrent.activityBA,"YourAdUnitid");
-RDebugUtils.currentLine=524290;
- //BA.debugLineNum = 524290;BA.debugLine="End Sub";
+RDebugUtils.currentLine=589824;
+ //BA.debugLineNum = 589824;BA.debugLine="Sub LoadInterstitial_Click";
+RDebugUtils.currentLine=589825;
+ //BA.debugLineNum = 589825;BA.debugLine="Magnet.LoadInterstitial(\"YourAdUnitId\")";
+mostCurrent._magnet.LoadInterstitial(mostCurrent.activityBA,"YourAdUnitId");
+RDebugUtils.currentLine=589826;
+ //BA.debugLineNum = 589826;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadmrect_click() throws Exception{
@@ -669,8 +729,8 @@ RDebugUtils.currentLine=458757;
  //BA.debugLineNum = 458757;BA.debugLine="panel.BringToFront";
 _panel.BringToFront();
 RDebugUtils.currentLine=458758;
- //BA.debugLineNum = 458758;BA.debugLine="Magnet.LoadMRect(\"YourAdUnitid\", panel, Magnet.SI";
-mostCurrent._magnet.LoadMRect(mostCurrent.activityBA,"YourAdUnitid",(android.view.ViewGroup)(_panel.getObject()),mostCurrent._magnet.SIZE_300_250);
+ //BA.debugLineNum = 458758;BA.debugLine="Magnet.LoadMRect(\"YourAdUnitId\", panel, Magnet.SI";
+mostCurrent._magnet.LoadMRect(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),mostCurrent._magnet.SIZE_MEDIUM_RECTANGLE);
 RDebugUtils.currentLine=458759;
  //BA.debugLineNum = 458759;BA.debugLine="End Sub";
 return "";
@@ -679,46 +739,46 @@ public static String  _on_ad_available() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_available"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_available", null);
-RDebugUtils.currentLine=589824;
- //BA.debugLineNum = 589824;BA.debugLine="Sub on_ad_available";
-RDebugUtils.currentLine=589825;
- //BA.debugLineNum = 589825;BA.debugLine="Log(\"AdAvailable\")";
+RDebugUtils.currentLine=655360;
+ //BA.debugLineNum = 655360;BA.debugLine="Sub on_ad_available";
+RDebugUtils.currentLine=655361;
+ //BA.debugLineNum = 655361;BA.debugLine="Log(\"AdAvailable\")";
 anywheresoftware.b4a.keywords.Common.Log("AdAvailable");
-RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="Magnet.ShowInterstitial()";
+RDebugUtils.currentLine=655362;
+ //BA.debugLineNum = 655362;BA.debugLine="Magnet.ShowInterstitial()";
 mostCurrent._magnet.ShowInterstitial(mostCurrent.activityBA);
-RDebugUtils.currentLine=589827;
- //BA.debugLineNum = 589827;BA.debugLine="End Sub";
+RDebugUtils.currentLine=655363;
+ //BA.debugLineNum = 655363;BA.debugLine="End Sub";
 return "";
 }
 public static String  _on_ad_receive_fail() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_receive_fail"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_receive_fail", null);
-RDebugUtils.currentLine=655360;
- //BA.debugLineNum = 655360;BA.debugLine="Sub on_ad_receive_fail";
-RDebugUtils.currentLine=655361;
- //BA.debugLineNum = 655361;BA.debugLine="Log(\"AdReceiveFail\")";
+RDebugUtils.currentLine=720896;
+ //BA.debugLineNum = 720896;BA.debugLine="Sub on_ad_receive_fail";
+RDebugUtils.currentLine=720897;
+ //BA.debugLineNum = 720897;BA.debugLine="Log(\"AdReceiveFail\")";
 anywheresoftware.b4a.keywords.Common.Log("AdReceiveFail");
-RDebugUtils.currentLine=655362;
- //BA.debugLineNum = 655362;BA.debugLine="End Sub";
+RDebugUtils.currentLine=720898;
+ //BA.debugLineNum = 720898;BA.debugLine="End Sub";
 return "";
 }
 public static String  _tabhost1_tabchanged() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "tabhost1_tabchanged"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "tabhost1_tabchanged", null);
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub TabHost1_TabChanged";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
+RDebugUtils.currentLine=786432;
+ //BA.debugLineNum = 786432;BA.debugLine="Sub TabHost1_TabChanged";
+RDebugUtils.currentLine=786433;
+ //BA.debugLineNum = 786433;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
 if (mostCurrent._tabhost1.getCurrentTab()==3) { 
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="FillScrollView";
+RDebugUtils.currentLine=786434;
+ //BA.debugLineNum = 786434;BA.debugLine="FillScrollView";
 _fillscrollview();
  };
-RDebugUtils.currentLine=720900;
- //BA.debugLineNum = 720900;BA.debugLine="End Sub";
+RDebugUtils.currentLine=786436;
+ //BA.debugLineNum = 786436;BA.debugLine="End Sub";
 return "";
 }
 }

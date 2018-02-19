@@ -59,9 +59,11 @@ public static RemoteObject _magnet = RemoteObject.declareNull("com.magnetadservi
 public static RemoteObject _tabhost1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.TabHostWrapper");
 public static RemoteObject _bannerpanel = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 public static RemoteObject _mrectpanel = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
+public static RemoteObject _expresspanel = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 public static RemoteObject _nativescrollview = RemoteObject.declareNull("anywheresoftware.b4a.objects.ScrollViewWrapper");
 public static b4a.example.starter _starter = null;
+public static b4a.example.newactivity _newactivity = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"BannerPanel",main.mostCurrent._bannerpanel,"Magnet",main.mostCurrent._magnet,"MRectPanel",main.mostCurrent._mrectpanel,"NativeScrollView",main.mostCurrent._nativescrollview,"Starter",Debug.moduleToString(b4a.example.starter.class),"TabHost1",main.mostCurrent._tabhost1};
+		return new Object[] {"Activity",main.mostCurrent._activity,"BannerPanel",main.mostCurrent._bannerpanel,"ExpressPanel",main.mostCurrent._expresspanel,"Magnet",main.mostCurrent._magnet,"MRectPanel",main.mostCurrent._mrectpanel,"NativeScrollView",main.mostCurrent._nativescrollview,"NewActivity",Debug.moduleToString(b4a.example.newactivity.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"TabHost1",main.mostCurrent._tabhost1};
 }
 }
