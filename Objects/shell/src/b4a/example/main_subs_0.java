@@ -394,9 +394,9 @@ try {
 if (RapidSub.canDelegate("loadinterstitial_click")) return main.remoteMe.runUserSub(false, "main","loadinterstitial_click");
  BA.debugLineNum = 145;BA.debugLine="Sub LoadInterstitial_Click";
 Debug.ShouldStop(65536);
- BA.debugLineNum = 146;BA.debugLine="Magnet.LoadInterstitial(\"YourAdUnitId\")";
+ BA.debugLineNum = 146;BA.debugLine="Magnet.LoadInterstitial(\"YourInterstitialAdUnitId";
 Debug.ShouldStop(131072);
-main.mostCurrent._magnet.runVoidMethod ("LoadInterstitial",main.mostCurrent.activityBA,(Object)(RemoteObject.createImmutable("YourAdUnitId")));
+main.mostCurrent._magnet.runVoidMethod ("LoadInterstitial",main.mostCurrent.activityBA,(Object)(RemoteObject.createImmutable("YourInterstitialAdUnitId")));
  BA.debugLineNum = 147;BA.debugLine="End Sub";
 Debug.ShouldStop(262144);
 return RemoteObject.createImmutable("");
@@ -444,20 +444,17 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static RemoteObject  _on_ad_available() throws Exception{
+public static RemoteObject  _loadrewarded_click() throws Exception{
 try {
-		Debug.PushSubsStack("on_ad_available (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,149);
-if (RapidSub.canDelegate("on_ad_available")) return main.remoteMe.runUserSub(false, "main","on_ad_available");
- BA.debugLineNum = 149;BA.debugLine="Sub on_ad_available";
+		Debug.PushSubsStack("LoadRewarded_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,149);
+if (RapidSub.canDelegate("loadrewarded_click")) return main.remoteMe.runUserSub(false, "main","loadrewarded_click");
+ BA.debugLineNum = 149;BA.debugLine="Sub LoadRewarded_Click";
 Debug.ShouldStop(1048576);
- BA.debugLineNum = 150;BA.debugLine="Log(\"AdAvailable\")";
+ BA.debugLineNum = 150;BA.debugLine="Magnet.LoadRewardAd(\"YourRewardedAdUnitId\")";
 Debug.ShouldStop(2097152);
-main.mostCurrent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("AdAvailable")));
- BA.debugLineNum = 151;BA.debugLine="Magnet.ShowInterstitial()";
+main.mostCurrent._magnet.runVoidMethod ("LoadRewardAd",main.mostCurrent.activityBA,(Object)(RemoteObject.createImmutable("YourRewardedAdUnitId")));
+ BA.debugLineNum = 151;BA.debugLine="End Sub";
 Debug.ShouldStop(4194304);
-main.mostCurrent._magnet.runVoidMethod ("ShowInterstitial",main.mostCurrent.activityBA);
- BA.debugLineNum = 152;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -467,17 +464,96 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static RemoteObject  _on_ad_receive_fail() throws Exception{
+public static RemoteObject  _on_ad_available(RemoteObject _adunitid) throws Exception{
 try {
-		Debug.PushSubsStack("on_ad_receive_fail (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,154);
-if (RapidSub.canDelegate("on_ad_receive_fail")) return main.remoteMe.runUserSub(false, "main","on_ad_receive_fail");
- BA.debugLineNum = 154;BA.debugLine="Sub on_ad_receive_fail";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 155;BA.debugLine="Log(\"AdReceiveFail\")";
-Debug.ShouldStop(67108864);
+		Debug.PushSubsStack("on_ad_available (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,161);
+if (RapidSub.canDelegate("on_ad_available")) return main.remoteMe.runUserSub(false, "main","on_ad_available", _adunitid);
+Debug.locals.put("AdUnitId", _adunitid);
+ BA.debugLineNum = 161;BA.debugLine="Sub on_ad_available(AdUnitId As String)";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 162;BA.debugLine="Log(\"AdAvailable\")";
+Debug.ShouldStop(2);
+main.mostCurrent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("AdAvailable")));
+ BA.debugLineNum = 163;BA.debugLine="Log(AdUnitId)";
+Debug.ShouldStop(4);
+main.mostCurrent.__c.runVoidMethod ("Log",(Object)(_adunitid));
+ BA.debugLineNum = 164;BA.debugLine="If AdUnitId == \"YourInterstitialAdUnitId\" Then";
+Debug.ShouldStop(8);
+if (RemoteObject.solveBoolean("=",_adunitid,BA.ObjectToString("YourInterstitialAdUnitId"))) { 
+ BA.debugLineNum = 165;BA.debugLine="Magnet.ShowInterstitial()";
+Debug.ShouldStop(16);
+main.mostCurrent._magnet.runVoidMethod ("ShowInterstitial",main.mostCurrent.activityBA);
+ }else 
+{ BA.debugLineNum = 166;BA.debugLine="Else If AdUnitId == \"YourRewardedAdUnitId\" Then";
+Debug.ShouldStop(32);
+if (RemoteObject.solveBoolean("=",_adunitid,BA.ObjectToString("YourRewardedAdUnitId"))) { 
+ BA.debugLineNum = 167;BA.debugLine="Magnet.ShowRewardAd()";
+Debug.ShouldStop(64);
+main.mostCurrent._magnet.runVoidMethod ("ShowRewardAd",main.mostCurrent.activityBA);
+ }};
+ BA.debugLineNum = 170;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _on_ad_receive_fail(RemoteObject _adunitid) throws Exception{
+try {
+		Debug.PushSubsStack("on_ad_receive_fail (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,172);
+if (RapidSub.canDelegate("on_ad_receive_fail")) return main.remoteMe.runUserSub(false, "main","on_ad_receive_fail", _adunitid);
+Debug.locals.put("AdUnitId", _adunitid);
+ BA.debugLineNum = 172;BA.debugLine="Sub on_ad_receive_fail(AdUnitId As String)";
+Debug.ShouldStop(2048);
+ BA.debugLineNum = 173;BA.debugLine="Log(\"AdReceiveFail\")";
+Debug.ShouldStop(4096);
 main.mostCurrent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("AdReceiveFail")));
- BA.debugLineNum = 156;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 174;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _on_reward_failed() throws Exception{
+try {
+		Debug.PushSubsStack("on_reward_failed (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,157);
+if (RapidSub.canDelegate("on_reward_failed")) return main.remoteMe.runUserSub(false, "main","on_reward_failed");
+ BA.debugLineNum = 157;BA.debugLine="Sub on_reward_failed";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 158;BA.debugLine="Log(\"RewardFailed\")";
+Debug.ShouldStop(536870912);
+main.mostCurrent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("RewardFailed")));
+ BA.debugLineNum = 159;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _on_reward_successful() throws Exception{
+try {
+		Debug.PushSubsStack("on_reward_successful (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,153);
+if (RapidSub.canDelegate("on_reward_successful")) return main.remoteMe.runUserSub(false, "main","on_reward_successful");
+ BA.debugLineNum = 153;BA.debugLine="Sub on_reward_successful";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 154;BA.debugLine="Log(\"You can give reward to your user here\")";
+Debug.ShouldStop(33554432);
+main.mostCurrent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("You can give reward to your user here")));
+ BA.debugLineNum = 155;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -509,21 +585,61 @@ newactivity.myClass = BA.getDeviceClass ("b4a.example.newactivity");
  //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
+public static RemoteObject  _stopbanner_click() throws Exception{
+try {
+		Debug.PushSubsStack("StopBanner_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,182);
+if (RapidSub.canDelegate("stopbanner_click")) return main.remoteMe.runUserSub(false, "main","stopbanner_click");
+ BA.debugLineNum = 182;BA.debugLine="Sub StopBanner_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 183;BA.debugLine="Magnet.StopMobileBanner()";
+Debug.ShouldStop(4194304);
+main.mostCurrent._magnet.runVoidMethod ("StopMobileBanner",main.mostCurrent.activityBA);
+ BA.debugLineNum = 184;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _stopmrect_click() throws Exception{
+try {
+		Debug.PushSubsStack("StopMRect_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,186);
+if (RapidSub.canDelegate("stopmrect_click")) return main.remoteMe.runUserSub(false, "main","stopmrect_click");
+ BA.debugLineNum = 186;BA.debugLine="Sub StopMRect_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 187;BA.debugLine="Magnet.StopMRect()";
+Debug.ShouldStop(67108864);
+main.mostCurrent._magnet.runVoidMethod ("StopMRect",main.mostCurrent.activityBA);
+ BA.debugLineNum = 188;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _tabhost1_tabchanged() throws Exception{
 try {
-		Debug.PushSubsStack("TabHost1_TabChanged (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,158);
+		Debug.PushSubsStack("TabHost1_TabChanged (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,176);
 if (RapidSub.canDelegate("tabhost1_tabchanged")) return main.remoteMe.runUserSub(false, "main","tabhost1_tabchanged");
- BA.debugLineNum = 158;BA.debugLine="Sub TabHost1_TabChanged";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 159;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 176;BA.debugLine="Sub TabHost1_TabChanged";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 177;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
+Debug.ShouldStop(65536);
 if (RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 3))) { 
- BA.debugLineNum = 160;BA.debugLine="FillScrollView";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 178;BA.debugLine="FillScrollView";
+Debug.ShouldStop(131072);
 _fillscrollview();
  };
- BA.debugLineNum = 162;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 180;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

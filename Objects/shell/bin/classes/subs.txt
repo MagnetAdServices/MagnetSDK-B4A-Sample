@@ -29,11 +29,11 @@ main,loadexpress_click,0,0,136,143
 ,expresspanel,,magnet
 
 
-main,loadinactivity_click,0,1,114,116
+main,loadinactivity_click,0,0,114,116
 
 
 
-main,loadinterstitial_click,0,0,145,147
+main,loadinterstitial_click,0,1,145,147
 ,magnet
 
 
@@ -41,11 +41,23 @@ main,loadmrect_click,0,0,127,134
 ,mrectpanel,,magnet
 
 
-main,on_ad_available,0,0,149,152
+main,loadrewarded_click,0,1,149,151
 ,magnet
 
 
-main,on_ad_receive_fail,0,0,154,156
+main,on_ad_available,0,1,159,167
+,magnet
+
+
+main,on_ad_receive_fail,0,0,169,171
+
+
+
+main,on_reward_failed,0,0,177,179
+
+
+
+main,on_reward_successful,0,0,173,175
 
 
 
@@ -53,7 +65,15 @@ main,process_globals,0,1,15,17
 
 
 
-main,tabhost1_tabchanged,0,0,158,162
+main,stopbanner_click,0,0,181,183
+,magnet
+
+
+main,stopmrect_click,0,0,185,187
+,magnet
+
+
+main,tabhost1_tabchanged,0,0,153,157
 ,tabhost1,,nativescrollview,,magnet
 
 ,fillscrollview

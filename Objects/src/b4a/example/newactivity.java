@@ -338,52 +338,52 @@ RDebugUtils.currentModule="newactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime});
 anywheresoftware.b4a.objects.PanelWrapper _panel = null;
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=1376259;
- //BA.debugLineNum = 1376259;BA.debugLine="Magnet.Initialize()";
+RDebugUtils.currentLine=1441792;
+ //BA.debugLineNum = 1441792;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=1441795;
+ //BA.debugLineNum = 1441795;BA.debugLine="Magnet.Initialize()";
 mostCurrent._magnet.Initialize(mostCurrent.activityBA);
-RDebugUtils.currentLine=1376260;
- //BA.debugLineNum = 1376260;BA.debugLine="Magnet.SetTestMode(True)";
+RDebugUtils.currentLine=1441796;
+ //BA.debugLineNum = 1441796;BA.debugLine="Magnet.SetTestMode(True)";
 mostCurrent._magnet.SetTestMode(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=1376262;
- //BA.debugLineNum = 1376262;BA.debugLine="Dim panel As Panel";
+RDebugUtils.currentLine=1441798;
+ //BA.debugLineNum = 1441798;BA.debugLine="Dim panel As Panel";
 _panel = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=1376263;
- //BA.debugLineNum = 1376263;BA.debugLine="panel.Initialize(\"panel\")";
+RDebugUtils.currentLine=1441799;
+ //BA.debugLineNum = 1441799;BA.debugLine="panel.Initialize(\"panel\")";
 _panel.Initialize(mostCurrent.activityBA,"panel");
-RDebugUtils.currentLine=1376264;
- //BA.debugLineNum = 1376264;BA.debugLine="Activity.AddView(panel, 0, 0, 100%x, 15%y)";
+RDebugUtils.currentLine=1441800;
+ //BA.debugLineNum = 1441800;BA.debugLine="Activity.AddView(panel, 0, 0, 100%x, 15%y)";
 mostCurrent._activity.AddView((android.view.View)(_panel.getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (15),mostCurrent.activityBA));
-RDebugUtils.currentLine=1376265;
- //BA.debugLineNum = 1376265;BA.debugLine="panel.Visible = True";
+RDebugUtils.currentLine=1441801;
+ //BA.debugLineNum = 1441801;BA.debugLine="panel.Visible = True";
 _panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=1376266;
- //BA.debugLineNum = 1376266;BA.debugLine="panel.BringToFront";
+RDebugUtils.currentLine=1441802;
+ //BA.debugLineNum = 1441802;BA.debugLine="panel.BringToFront";
 _panel.BringToFront();
-RDebugUtils.currentLine=1376267;
- //BA.debugLineNum = 1376267;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitId\", panel)";
+RDebugUtils.currentLine=1441803;
+ //BA.debugLineNum = 1441803;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitId\", panel)";
 mostCurrent._magnet.LoadMobileBanner(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()));
-RDebugUtils.currentLine=1376268;
- //BA.debugLineNum = 1376268;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1441804;
+ //BA.debugLineNum = 1441804;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="newactivity";
-RDebugUtils.currentLine=1507328;
- //BA.debugLineNum = 1507328;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=1507330;
- //BA.debugLineNum = 1507330;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1572864;
+ //BA.debugLineNum = 1572864;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=1572866;
+ //BA.debugLineNum = 1572866;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="newactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null);
-RDebugUtils.currentLine=1441792;
- //BA.debugLineNum = 1441792;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=1441794;
- //BA.debugLineNum = 1441794;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1507328;
+ //BA.debugLineNum = 1507328;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=1507330;
+ //BA.debugLineNum = 1507330;BA.debugLine="End Sub";
 return "";
 }
 }

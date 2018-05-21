@@ -17,7 +17,7 @@ File8=sample-main.jpg
 File9=tabhost.bal
 NumberOfLibraries=2
 Library1=core
-Library2=magnet-android-sdk-b4a-5.0.2
+Library2=magnet-android-sdk-b4a-5.0.4
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: MagnetSDK B4A Sample
@@ -164,20 +164,45 @@ Sub LoadExpress_Click
 End Sub
 
 Sub LoadInterstitial_Click
-	Magnet.LoadInterstitial("YourAdUnitId")
+	Magnet.LoadInterstitial("YourInterstitialAdUnitId")
 End Sub
 
-Sub on_ad_available
-	Log("AdAvailable")
-	Magnet.ShowInterstitial()
-End Sub
-
-Sub on_ad_receive_fail
-	Log("AdReceiveFail")
+Sub LoadRewarded_Click
+	Magnet.LoadRewardAd("YourRewardedAdUnitId")
 End Sub
 
 Sub TabHost1_TabChanged
 	If TabHost1.CurrentTab = 3 Then
 		FillScrollView
 	End If
+End Sub
+
+Sub on_ad_available(AdUnitId As String)
+	Log("AdAvailable")
+	If AdUnitId == "YourInterstitialAdUnitId" Then
+		Magnet.ShowInterstitial()
+	Else If AdUnitId == "YourRewardedAdUnitId" Then
+		Magnet.ShowRewardAd()
+	End If
+	
+End Sub
+
+Sub on_ad_receive_fail(AdUnitId As String)
+	Log("AdReceiveFail")
+End Sub
+
+Sub on_reward_successful
+	Log("You can give reward to your user here")
+End Sub
+
+Sub on_reward_failed
+	Log("RewardFailed")
+End Sub
+
+Sub StopBanner_Click
+	Magnet.StopMobileBanner()
+End Sub
+
+Sub StopMRect_Click
+	Magnet.StopMRect()
 End Sub

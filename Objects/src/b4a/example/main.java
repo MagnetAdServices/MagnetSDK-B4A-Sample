@@ -627,92 +627,8 @@ RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "loadbanner_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "loadbanner_click", null);
 anywheresoftware.b4a.objects.PanelWrapper _panel = null;
-RDebugUtils.currentLine=393216;
- //BA.debugLineNum = 393216;BA.debugLine="Sub LoadBanner_Click";
-RDebugUtils.currentLine=393217;
- //BA.debugLineNum = 393217;BA.debugLine="Dim panel As Panel";
-_panel = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="panel.Initialize(\"panel\")";
-_panel.Initialize(mostCurrent.activityBA,"panel");
-RDebugUtils.currentLine=393219;
- //BA.debugLineNum = 393219;BA.debugLine="BannerPanel.AddView(panel, 0, 0, 100%x, 10%y)";
-mostCurrent._bannerpanel.AddView((android.view.View)(_panel.getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
-RDebugUtils.currentLine=393220;
- //BA.debugLineNum = 393220;BA.debugLine="panel.Visible = True";
-_panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=393221;
- //BA.debugLineNum = 393221;BA.debugLine="panel.BringToFront";
-_panel.BringToFront();
-RDebugUtils.currentLine=393222;
- //BA.debugLineNum = 393222;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitId\", panel)";
-mostCurrent._magnet.LoadMobileBanner(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()));
-RDebugUtils.currentLine=393223;
- //BA.debugLineNum = 393223;BA.debugLine="End Sub";
-return "";
-}
-public static String  _loadexpress_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "loadexpress_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "loadexpress_click", null);
-anywheresoftware.b4a.objects.PanelWrapper _panel = null;
-RDebugUtils.currentLine=524288;
- //BA.debugLineNum = 524288;BA.debugLine="Sub LoadExpress_Click";
-RDebugUtils.currentLine=524289;
- //BA.debugLineNum = 524289;BA.debugLine="Dim panel As Panel";
-_panel = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=524290;
- //BA.debugLineNum = 524290;BA.debugLine="panel.Initialize(\"panel\")";
-_panel.Initialize(mostCurrent.activityBA,"panel");
-RDebugUtils.currentLine=524291;
- //BA.debugLineNum = 524291;BA.debugLine="ExpressPanel.AddView(panel, 50%x-150dip, 0, 300di";
-mostCurrent._expresspanel.AddView((android.view.View)(_panel.getObject()),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150))),(int) (0),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (250)));
-RDebugUtils.currentLine=524292;
- //BA.debugLineNum = 524292;BA.debugLine="panel.Visible = True";
-_panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=524293;
- //BA.debugLineNum = 524293;BA.debugLine="panel.BringToFront";
-_panel.BringToFront();
-RDebugUtils.currentLine=524294;
- //BA.debugLineNum = 524294;BA.debugLine="Magnet.LoadNativeExpressWithCustomSize(\"YourAdUni";
-mostCurrent._magnet.LoadNativeExpressWithCustomSize(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),(int) (300),(int) (200));
-RDebugUtils.currentLine=524295;
- //BA.debugLineNum = 524295;BA.debugLine="End Sub";
-return "";
-}
-public static String  _loadinactivity_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinactivity_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "loadinactivity_click", null);
-RDebugUtils.currentLine=1638400;
- //BA.debugLineNum = 1638400;BA.debugLine="Sub LoadInActivity_Click";
-RDebugUtils.currentLine=1638401;
- //BA.debugLineNum = 1638401;BA.debugLine="StartActivity(NewActivity)";
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._newactivity.getObject()));
-RDebugUtils.currentLine=1638402;
- //BA.debugLineNum = 1638402;BA.debugLine="End Sub";
-return "";
-}
-public static String  _loadinterstitial_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinterstitial_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "loadinterstitial_click", null);
-RDebugUtils.currentLine=589824;
- //BA.debugLineNum = 589824;BA.debugLine="Sub LoadInterstitial_Click";
-RDebugUtils.currentLine=589825;
- //BA.debugLineNum = 589825;BA.debugLine="Magnet.LoadInterstitial(\"YourAdUnitId\")";
-mostCurrent._magnet.LoadInterstitial(mostCurrent.activityBA,"YourAdUnitId");
-RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="End Sub";
-return "";
-}
-public static String  _loadmrect_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "loadmrect_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "loadmrect_click", null);
-anywheresoftware.b4a.objects.PanelWrapper _panel = null;
 RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Sub LoadMRect_Click";
+ //BA.debugLineNum = 458752;BA.debugLine="Sub LoadBanner_Click";
 RDebugUtils.currentLine=458753;
  //BA.debugLineNum = 458753;BA.debugLine="Dim panel As Panel";
 _panel = new anywheresoftware.b4a.objects.PanelWrapper();
@@ -720,8 +636,8 @@ RDebugUtils.currentLine=458754;
  //BA.debugLineNum = 458754;BA.debugLine="panel.Initialize(\"panel\")";
 _panel.Initialize(mostCurrent.activityBA,"panel");
 RDebugUtils.currentLine=458755;
- //BA.debugLineNum = 458755;BA.debugLine="MRectPanel.AddView(panel, 50%x-150dip, 0, 300dip,";
-mostCurrent._mrectpanel.AddView((android.view.View)(_panel.getObject()),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150))),(int) (0),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (250)));
+ //BA.debugLineNum = 458755;BA.debugLine="BannerPanel.AddView(panel, 0, 0, 100%x, 10%y)";
+mostCurrent._bannerpanel.AddView((android.view.View)(_panel.getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
 RDebugUtils.currentLine=458756;
  //BA.debugLineNum = 458756;BA.debugLine="panel.Visible = True";
 _panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
@@ -729,56 +645,219 @@ RDebugUtils.currentLine=458757;
  //BA.debugLineNum = 458757;BA.debugLine="panel.BringToFront";
 _panel.BringToFront();
 RDebugUtils.currentLine=458758;
- //BA.debugLineNum = 458758;BA.debugLine="Magnet.LoadMRect(\"YourAdUnitId\", panel, Magnet.SI";
-mostCurrent._magnet.LoadMRect(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),mostCurrent._magnet.SIZE_MEDIUM_RECTANGLE);
+ //BA.debugLineNum = 458758;BA.debugLine="Magnet.LoadMobileBanner(\"YourAdUnitId\", panel)";
+mostCurrent._magnet.LoadMobileBanner(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()));
 RDebugUtils.currentLine=458759;
  //BA.debugLineNum = 458759;BA.debugLine="End Sub";
 return "";
 }
-public static String  _on_ad_available() throws Exception{
+public static String  _loadexpress_click() throws Exception{
 RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_available"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_available", null);
-RDebugUtils.currentLine=655360;
- //BA.debugLineNum = 655360;BA.debugLine="Sub on_ad_available";
-RDebugUtils.currentLine=655361;
- //BA.debugLineNum = 655361;BA.debugLine="Log(\"AdAvailable\")";
-anywheresoftware.b4a.keywords.Common.Log("AdAvailable");
-RDebugUtils.currentLine=655362;
- //BA.debugLineNum = 655362;BA.debugLine="Magnet.ShowInterstitial()";
-mostCurrent._magnet.ShowInterstitial(mostCurrent.activityBA);
-RDebugUtils.currentLine=655363;
- //BA.debugLineNum = 655363;BA.debugLine="End Sub";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadexpress_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadexpress_click", null);
+anywheresoftware.b4a.objects.PanelWrapper _panel = null;
+RDebugUtils.currentLine=589824;
+ //BA.debugLineNum = 589824;BA.debugLine="Sub LoadExpress_Click";
+RDebugUtils.currentLine=589825;
+ //BA.debugLineNum = 589825;BA.debugLine="Dim panel As Panel";
+_panel = new anywheresoftware.b4a.objects.PanelWrapper();
+RDebugUtils.currentLine=589826;
+ //BA.debugLineNum = 589826;BA.debugLine="panel.Initialize(\"panel\")";
+_panel.Initialize(mostCurrent.activityBA,"panel");
+RDebugUtils.currentLine=589827;
+ //BA.debugLineNum = 589827;BA.debugLine="ExpressPanel.AddView(panel, 50%x-150dip, 0, 300di";
+mostCurrent._expresspanel.AddView((android.view.View)(_panel.getObject()),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150))),(int) (0),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (250)));
+RDebugUtils.currentLine=589828;
+ //BA.debugLineNum = 589828;BA.debugLine="panel.Visible = True";
+_panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=589829;
+ //BA.debugLineNum = 589829;BA.debugLine="panel.BringToFront";
+_panel.BringToFront();
+RDebugUtils.currentLine=589830;
+ //BA.debugLineNum = 589830;BA.debugLine="Magnet.LoadNativeExpressWithCustomSize(\"YourAdUni";
+mostCurrent._magnet.LoadNativeExpressWithCustomSize(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),(int) (300),(int) (200));
+RDebugUtils.currentLine=589831;
+ //BA.debugLineNum = 589831;BA.debugLine="End Sub";
 return "";
 }
-public static String  _on_ad_receive_fail() throws Exception{
+public static String  _loadinactivity_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinactivity_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadinactivity_click", null);
+RDebugUtils.currentLine=393216;
+ //BA.debugLineNum = 393216;BA.debugLine="Sub LoadInActivity_Click";
+RDebugUtils.currentLine=393217;
+ //BA.debugLineNum = 393217;BA.debugLine="StartActivity(NewActivity)";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._newactivity.getObject()));
+RDebugUtils.currentLine=393218;
+ //BA.debugLineNum = 393218;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadinterstitial_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadinterstitial_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadinterstitial_click", null);
+RDebugUtils.currentLine=655360;
+ //BA.debugLineNum = 655360;BA.debugLine="Sub LoadInterstitial_Click";
+RDebugUtils.currentLine=655361;
+ //BA.debugLineNum = 655361;BA.debugLine="Magnet.LoadInterstitial(\"YourInterstitialAdUnitId";
+mostCurrent._magnet.LoadInterstitial(mostCurrent.activityBA,"YourInterstitialAdUnitId");
+RDebugUtils.currentLine=655362;
+ //BA.debugLineNum = 655362;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadmrect_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadmrect_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadmrect_click", null);
+anywheresoftware.b4a.objects.PanelWrapper _panel = null;
+RDebugUtils.currentLine=524288;
+ //BA.debugLineNum = 524288;BA.debugLine="Sub LoadMRect_Click";
+RDebugUtils.currentLine=524289;
+ //BA.debugLineNum = 524289;BA.debugLine="Dim panel As Panel";
+_panel = new anywheresoftware.b4a.objects.PanelWrapper();
+RDebugUtils.currentLine=524290;
+ //BA.debugLineNum = 524290;BA.debugLine="panel.Initialize(\"panel\")";
+_panel.Initialize(mostCurrent.activityBA,"panel");
+RDebugUtils.currentLine=524291;
+ //BA.debugLineNum = 524291;BA.debugLine="MRectPanel.AddView(panel, 50%x-150dip, 0, 300dip,";
+mostCurrent._mrectpanel.AddView((android.view.View)(_panel.getObject()),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150))),(int) (0),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (250)));
+RDebugUtils.currentLine=524292;
+ //BA.debugLineNum = 524292;BA.debugLine="panel.Visible = True";
+_panel.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=524293;
+ //BA.debugLineNum = 524293;BA.debugLine="panel.BringToFront";
+_panel.BringToFront();
+RDebugUtils.currentLine=524294;
+ //BA.debugLineNum = 524294;BA.debugLine="Magnet.LoadMRect(\"YourAdUnitId\", panel, Magnet.SI";
+mostCurrent._magnet.LoadMRect(mostCurrent.activityBA,"YourAdUnitId",(android.view.ViewGroup)(_panel.getObject()),mostCurrent._magnet.SIZE_MEDIUM_RECTANGLE);
+RDebugUtils.currentLine=524295;
+ //BA.debugLineNum = 524295;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadrewarded_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "loadrewarded_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "loadrewarded_click", null);
+RDebugUtils.currentLine=1703936;
+ //BA.debugLineNum = 1703936;BA.debugLine="Sub LoadRewarded_Click";
+RDebugUtils.currentLine=1703937;
+ //BA.debugLineNum = 1703937;BA.debugLine="Magnet.LoadRewardAd(\"YourRewardedAdUnitId\")";
+mostCurrent._magnet.LoadRewardAd(mostCurrent.activityBA,"YourRewardedAdUnitId");
+RDebugUtils.currentLine=1703938;
+ //BA.debugLineNum = 1703938;BA.debugLine="End Sub";
+return "";
+}
+public static String  _on_ad_available(String _adunitid) throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_available"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_available", new Object[] {_adunitid});
+RDebugUtils.currentLine=720896;
+ //BA.debugLineNum = 720896;BA.debugLine="Sub on_ad_available(AdUnitId As String)";
+RDebugUtils.currentLine=720897;
+ //BA.debugLineNum = 720897;BA.debugLine="Log(\"AdAvailable\")";
+anywheresoftware.b4a.keywords.Common.Log("AdAvailable");
+RDebugUtils.currentLine=720898;
+ //BA.debugLineNum = 720898;BA.debugLine="Log(AdUnitId)";
+anywheresoftware.b4a.keywords.Common.Log(_adunitid);
+RDebugUtils.currentLine=720899;
+ //BA.debugLineNum = 720899;BA.debugLine="If AdUnitId == \"YourInterstitialAdUnitId\" Then";
+if ((_adunitid).equals("YourInterstitialAdUnitId")) { 
+RDebugUtils.currentLine=720900;
+ //BA.debugLineNum = 720900;BA.debugLine="Magnet.ShowInterstitial()";
+mostCurrent._magnet.ShowInterstitial(mostCurrent.activityBA);
+ }else 
+{RDebugUtils.currentLine=720901;
+ //BA.debugLineNum = 720901;BA.debugLine="Else If AdUnitId == \"YourRewardedAdUnitId\" Then";
+if ((_adunitid).equals("YourRewardedAdUnitId")) { 
+RDebugUtils.currentLine=720902;
+ //BA.debugLineNum = 720902;BA.debugLine="Magnet.ShowRewardAd()";
+mostCurrent._magnet.ShowRewardAd(mostCurrent.activityBA);
+ }};
+RDebugUtils.currentLine=720905;
+ //BA.debugLineNum = 720905;BA.debugLine="End Sub";
+return "";
+}
+public static String  _on_ad_receive_fail(String _adunitid) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_receive_fail"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_receive_fail", null);
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub on_ad_receive_fail";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="Log(\"AdReceiveFail\")";
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_receive_fail", new Object[] {_adunitid});
+RDebugUtils.currentLine=786432;
+ //BA.debugLineNum = 786432;BA.debugLine="Sub on_ad_receive_fail(AdUnitId As String)";
+RDebugUtils.currentLine=786433;
+ //BA.debugLineNum = 786433;BA.debugLine="Log(\"AdReceiveFail\")";
 anywheresoftware.b4a.keywords.Common.Log("AdReceiveFail");
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="End Sub";
+RDebugUtils.currentLine=786434;
+ //BA.debugLineNum = 786434;BA.debugLine="End Sub";
+return "";
+}
+public static String  _on_reward_failed() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "on_reward_failed"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_reward_failed", null);
+RDebugUtils.currentLine=1835008;
+ //BA.debugLineNum = 1835008;BA.debugLine="Sub on_reward_failed";
+RDebugUtils.currentLine=1835009;
+ //BA.debugLineNum = 1835009;BA.debugLine="Log(\"RewardFailed\")";
+anywheresoftware.b4a.keywords.Common.Log("RewardFailed");
+RDebugUtils.currentLine=1835010;
+ //BA.debugLineNum = 1835010;BA.debugLine="End Sub";
+return "";
+}
+public static String  _on_reward_successful() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "on_reward_successful"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_reward_successful", null);
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Sub on_reward_successful";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="Log(\"You can give reward to your user here\")";
+anywheresoftware.b4a.keywords.Common.Log("You can give reward to your user here");
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="End Sub";
+return "";
+}
+public static String  _stopbanner_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "stopbanner_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "stopbanner_click", null);
+RDebugUtils.currentLine=1900544;
+ //BA.debugLineNum = 1900544;BA.debugLine="Sub StopBanner_Click";
+RDebugUtils.currentLine=1900545;
+ //BA.debugLineNum = 1900545;BA.debugLine="Magnet.StopMobileBanner()";
+mostCurrent._magnet.StopMobileBanner(mostCurrent.activityBA);
+RDebugUtils.currentLine=1900546;
+ //BA.debugLineNum = 1900546;BA.debugLine="End Sub";
+return "";
+}
+public static String  _stopmrect_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "stopmrect_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "stopmrect_click", null);
+RDebugUtils.currentLine=1966080;
+ //BA.debugLineNum = 1966080;BA.debugLine="Sub StopMRect_Click";
+RDebugUtils.currentLine=1966081;
+ //BA.debugLineNum = 1966081;BA.debugLine="Magnet.StopMRect()";
+mostCurrent._magnet.StopMRect(mostCurrent.activityBA);
+RDebugUtils.currentLine=1966082;
+ //BA.debugLineNum = 1966082;BA.debugLine="End Sub";
 return "";
 }
 public static String  _tabhost1_tabchanged() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "tabhost1_tabchanged"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "tabhost1_tabchanged", null);
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub TabHost1_TabChanged";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
+RDebugUtils.currentLine=851968;
+ //BA.debugLineNum = 851968;BA.debugLine="Sub TabHost1_TabChanged";
+RDebugUtils.currentLine=851969;
+ //BA.debugLineNum = 851969;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
 if (mostCurrent._tabhost1.getCurrentTab()==3) { 
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="FillScrollView";
+RDebugUtils.currentLine=851970;
+ //BA.debugLineNum = 851970;BA.debugLine="FillScrollView";
 _fillscrollview();
  };
-RDebugUtils.currentLine=786436;
- //BA.debugLineNum = 786436;BA.debugLine="End Sub";
+RDebugUtils.currentLine=851972;
+ //BA.debugLineNum = 851972;BA.debugLine="End Sub";
 return "";
 }
 }
