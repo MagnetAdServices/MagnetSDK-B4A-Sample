@@ -739,125 +739,133 @@ public static String  _loadrewarded_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "loadrewarded_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "loadrewarded_click", null);
-RDebugUtils.currentLine=1703936;
- //BA.debugLineNum = 1703936;BA.debugLine="Sub LoadRewarded_Click";
-RDebugUtils.currentLine=1703937;
- //BA.debugLineNum = 1703937;BA.debugLine="Magnet.LoadRewardAd(\"YourRewardedAdUnitId\")";
+RDebugUtils.currentLine=720896;
+ //BA.debugLineNum = 720896;BA.debugLine="Sub LoadRewarded_Click";
+RDebugUtils.currentLine=720897;
+ //BA.debugLineNum = 720897;BA.debugLine="Magnet.LoadRewardAd(\"YourRewardedAdUnitId\")";
 mostCurrent._magnet.LoadRewardAd(mostCurrent.activityBA,"YourRewardedAdUnitId");
-RDebugUtils.currentLine=1703938;
- //BA.debugLineNum = 1703938;BA.debugLine="End Sub";
+RDebugUtils.currentLine=720898;
+ //BA.debugLineNum = 720898;BA.debugLine="End Sub";
 return "";
 }
 public static String  _on_ad_available(String _adunitid) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_available"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_available", new Object[] {_adunitid});
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub on_ad_available(AdUnitId As String)";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="Log(\"AdAvailable\")";
+RDebugUtils.currentLine=851968;
+ //BA.debugLineNum = 851968;BA.debugLine="Sub on_ad_available(AdUnitId As String)";
+RDebugUtils.currentLine=851969;
+ //BA.debugLineNum = 851969;BA.debugLine="Log(\"AdAvailable\")";
 anywheresoftware.b4a.keywords.Common.Log("AdAvailable");
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="Log(AdUnitId)";
-anywheresoftware.b4a.keywords.Common.Log(_adunitid);
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="If AdUnitId == \"YourInterstitialAdUnitId\" Then";
+RDebugUtils.currentLine=851970;
+ //BA.debugLineNum = 851970;BA.debugLine="If AdUnitId == \"YourInterstitialAdUnitId\" Then";
 if ((_adunitid).equals("YourInterstitialAdUnitId")) { 
-RDebugUtils.currentLine=720900;
- //BA.debugLineNum = 720900;BA.debugLine="Magnet.ShowInterstitial()";
+RDebugUtils.currentLine=851971;
+ //BA.debugLineNum = 851971;BA.debugLine="Magnet.ShowInterstitial()";
 mostCurrent._magnet.ShowInterstitial(mostCurrent.activityBA);
  }else 
-{RDebugUtils.currentLine=720901;
- //BA.debugLineNum = 720901;BA.debugLine="Else If AdUnitId == \"YourRewardedAdUnitId\" Then";
+{RDebugUtils.currentLine=851972;
+ //BA.debugLineNum = 851972;BA.debugLine="Else If AdUnitId == \"YourRewardedAdUnitId\" Then";
 if ((_adunitid).equals("YourRewardedAdUnitId")) { 
-RDebugUtils.currentLine=720902;
- //BA.debugLineNum = 720902;BA.debugLine="Magnet.ShowRewardAd()";
+RDebugUtils.currentLine=851973;
+ //BA.debugLineNum = 851973;BA.debugLine="Magnet.ShowRewardAd()";
 mostCurrent._magnet.ShowRewardAd(mostCurrent.activityBA);
  }};
-RDebugUtils.currentLine=720905;
- //BA.debugLineNum = 720905;BA.debugLine="End Sub";
+RDebugUtils.currentLine=851976;
+ //BA.debugLineNum = 851976;BA.debugLine="End Sub";
+return "";
+}
+public static String  _on_ad_close(String _adunitid) throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_close"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_close", new Object[] {_adunitid});
+RDebugUtils.currentLine=2031616;
+ //BA.debugLineNum = 2031616;BA.debugLine="Sub on_ad_close(AdUnitId As String)";
+RDebugUtils.currentLine=2031617;
+ //BA.debugLineNum = 2031617;BA.debugLine="Log(AdUnitId)";
+anywheresoftware.b4a.keywords.Common.Log(_adunitid);
+RDebugUtils.currentLine=2031618;
+ //BA.debugLineNum = 2031618;BA.debugLine="Log(\"closed\")";
+anywheresoftware.b4a.keywords.Common.Log("closed");
+RDebugUtils.currentLine=2031619;
+ //BA.debugLineNum = 2031619;BA.debugLine="End Sub";
 return "";
 }
 public static String  _on_ad_receive_fail(String _adunitid) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_receive_fail"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_receive_fail", new Object[] {_adunitid});
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub on_ad_receive_fail(AdUnitId As String)";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="Log(\"AdReceiveFail\")";
+RDebugUtils.currentLine=917504;
+ //BA.debugLineNum = 917504;BA.debugLine="Sub on_ad_receive_fail(AdUnitId As String)";
+RDebugUtils.currentLine=917505;
+ //BA.debugLineNum = 917505;BA.debugLine="Log(\"AdReceiveFail\")";
 anywheresoftware.b4a.keywords.Common.Log("AdReceiveFail");
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="End Sub";
+RDebugUtils.currentLine=917506;
+ //BA.debugLineNum = 917506;BA.debugLine="End Sub";
 return "";
 }
-public static String  _on_reward_failed() throws Exception{
+public static String  _on_finish(String _isrewardsuccessful) throws Exception{
 RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "on_reward_failed"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "on_reward_failed", null);
-RDebugUtils.currentLine=1835008;
- //BA.debugLineNum = 1835008;BA.debugLine="Sub on_reward_failed";
-RDebugUtils.currentLine=1835009;
- //BA.debugLineNum = 1835009;BA.debugLine="Log(\"RewardFailed\")";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "on_finish"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "on_finish", new Object[] {_isrewardsuccessful});
+RDebugUtils.currentLine=1966080;
+ //BA.debugLineNum = 1966080;BA.debugLine="Sub on_finish(IsRewardSuccessful As String)";
+RDebugUtils.currentLine=1966081;
+ //BA.debugLineNum = 1966081;BA.debugLine="If IsRewardSuccessful == \"true\" Then";
+if ((_isrewardsuccessful).equals("true")) { 
+RDebugUtils.currentLine=1966082;
+ //BA.debugLineNum = 1966082;BA.debugLine="Log(\"You can give reward to your user here \")";
+anywheresoftware.b4a.keywords.Common.Log("You can give reward to your user here ");
+ }else {
+RDebugUtils.currentLine=1966084;
+ //BA.debugLineNum = 1966084;BA.debugLine="Log(\"RewardFailed\")";
 anywheresoftware.b4a.keywords.Common.Log("RewardFailed");
-RDebugUtils.currentLine=1835010;
- //BA.debugLineNum = 1835010;BA.debugLine="End Sub";
-return "";
-}
-public static String  _on_reward_successful() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "on_reward_successful"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "on_reward_successful", null);
-RDebugUtils.currentLine=1769472;
- //BA.debugLineNum = 1769472;BA.debugLine="Sub on_reward_successful";
-RDebugUtils.currentLine=1769473;
- //BA.debugLineNum = 1769473;BA.debugLine="Log(\"You can give reward to your user here\")";
-anywheresoftware.b4a.keywords.Common.Log("You can give reward to your user here");
-RDebugUtils.currentLine=1769474;
- //BA.debugLineNum = 1769474;BA.debugLine="End Sub";
+ };
+RDebugUtils.currentLine=1966086;
+ //BA.debugLineNum = 1966086;BA.debugLine="End Sub";
 return "";
 }
 public static String  _stopbanner_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "stopbanner_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "stopbanner_click", null);
-RDebugUtils.currentLine=1900544;
- //BA.debugLineNum = 1900544;BA.debugLine="Sub StopBanner_Click";
-RDebugUtils.currentLine=1900545;
- //BA.debugLineNum = 1900545;BA.debugLine="Magnet.StopMobileBanner()";
+RDebugUtils.currentLine=1114112;
+ //BA.debugLineNum = 1114112;BA.debugLine="Sub StopBanner_Click";
+RDebugUtils.currentLine=1114113;
+ //BA.debugLineNum = 1114113;BA.debugLine="Magnet.StopMobileBanner()";
 mostCurrent._magnet.StopMobileBanner(mostCurrent.activityBA);
-RDebugUtils.currentLine=1900546;
- //BA.debugLineNum = 1900546;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1114114;
+ //BA.debugLineNum = 1114114;BA.debugLine="End Sub";
 return "";
 }
 public static String  _stopmrect_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "stopmrect_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "stopmrect_click", null);
-RDebugUtils.currentLine=1966080;
- //BA.debugLineNum = 1966080;BA.debugLine="Sub StopMRect_Click";
-RDebugUtils.currentLine=1966081;
- //BA.debugLineNum = 1966081;BA.debugLine="Magnet.StopMRect()";
+RDebugUtils.currentLine=1179648;
+ //BA.debugLineNum = 1179648;BA.debugLine="Sub StopMRect_Click";
+RDebugUtils.currentLine=1179649;
+ //BA.debugLineNum = 1179649;BA.debugLine="Magnet.StopMRect()";
 mostCurrent._magnet.StopMRect(mostCurrent.activityBA);
-RDebugUtils.currentLine=1966082;
- //BA.debugLineNum = 1966082;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1179650;
+ //BA.debugLineNum = 1179650;BA.debugLine="End Sub";
 return "";
 }
 public static String  _tabhost1_tabchanged() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "tabhost1_tabchanged"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "tabhost1_tabchanged", null);
-RDebugUtils.currentLine=851968;
- //BA.debugLineNum = 851968;BA.debugLine="Sub TabHost1_TabChanged";
-RDebugUtils.currentLine=851969;
- //BA.debugLineNum = 851969;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
+RDebugUtils.currentLine=786432;
+ //BA.debugLineNum = 786432;BA.debugLine="Sub TabHost1_TabChanged";
+RDebugUtils.currentLine=786433;
+ //BA.debugLineNum = 786433;BA.debugLine="If TabHost1.CurrentTab = 3 Then";
 if (mostCurrent._tabhost1.getCurrentTab()==3) { 
-RDebugUtils.currentLine=851970;
- //BA.debugLineNum = 851970;BA.debugLine="FillScrollView";
+RDebugUtils.currentLine=786434;
+ //BA.debugLineNum = 786434;BA.debugLine="FillScrollView";
 _fillscrollview();
  };
-RDebugUtils.currentLine=851972;
- //BA.debugLineNum = 851972;BA.debugLine="End Sub";
+RDebugUtils.currentLine=786436;
+ //BA.debugLineNum = 786436;BA.debugLine="End Sub";
 return "";
 }
 }
