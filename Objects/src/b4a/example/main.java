@@ -779,16 +779,16 @@ public static String  _on_ad_close(String _adunitid) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_ad_close"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_ad_close", new Object[] {_adunitid});
-RDebugUtils.currentLine=2031616;
- //BA.debugLineNum = 2031616;BA.debugLine="Sub on_ad_close(AdUnitId As String)";
-RDebugUtils.currentLine=2031617;
- //BA.debugLineNum = 2031617;BA.debugLine="Log(AdUnitId)";
+RDebugUtils.currentLine=983040;
+ //BA.debugLineNum = 983040;BA.debugLine="Sub on_ad_close(AdUnitId As String)";
+RDebugUtils.currentLine=983041;
+ //BA.debugLineNum = 983041;BA.debugLine="Log(AdUnitId)";
 anywheresoftware.b4a.keywords.Common.Log(_adunitid);
-RDebugUtils.currentLine=2031618;
- //BA.debugLineNum = 2031618;BA.debugLine="Log(\"closed\")";
+RDebugUtils.currentLine=983042;
+ //BA.debugLineNum = 983042;BA.debugLine="Log(\"closed\")";
 anywheresoftware.b4a.keywords.Common.Log("closed");
-RDebugUtils.currentLine=2031619;
- //BA.debugLineNum = 2031619;BA.debugLine="End Sub";
+RDebugUtils.currentLine=983043;
+ //BA.debugLineNum = 983043;BA.debugLine="End Sub";
 return "";
 }
 public static String  _on_ad_receive_fail(String _adunitid) throws Exception{
@@ -808,21 +808,21 @@ public static String  _on_finish(String _isrewardsuccessful) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "on_finish"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "on_finish", new Object[] {_isrewardsuccessful});
-RDebugUtils.currentLine=1966080;
- //BA.debugLineNum = 1966080;BA.debugLine="Sub on_finish(IsRewardSuccessful As String)";
-RDebugUtils.currentLine=1966081;
- //BA.debugLineNum = 1966081;BA.debugLine="If IsRewardSuccessful == \"true\" Then";
+RDebugUtils.currentLine=1048576;
+ //BA.debugLineNum = 1048576;BA.debugLine="Sub on_finish(IsRewardSuccessful As String)";
+RDebugUtils.currentLine=1048577;
+ //BA.debugLineNum = 1048577;BA.debugLine="If IsRewardSuccessful == \"true\" Then";
 if ((_isrewardsuccessful).equals("true")) { 
-RDebugUtils.currentLine=1966082;
- //BA.debugLineNum = 1966082;BA.debugLine="Log(\"You can give reward to your user here \")";
+RDebugUtils.currentLine=1048578;
+ //BA.debugLineNum = 1048578;BA.debugLine="Log(\"You can give reward to your user here \")";
 anywheresoftware.b4a.keywords.Common.Log("You can give reward to your user here ");
  }else {
-RDebugUtils.currentLine=1966084;
- //BA.debugLineNum = 1966084;BA.debugLine="Log(\"RewardFailed\")";
+RDebugUtils.currentLine=1048580;
+ //BA.debugLineNum = 1048580;BA.debugLine="Log(\"RewardFailed\")";
 anywheresoftware.b4a.keywords.Common.Log("RewardFailed");
  };
-RDebugUtils.currentLine=1966086;
- //BA.debugLineNum = 1966086;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1048582;
+ //BA.debugLineNum = 1048582;BA.debugLine="End Sub";
 return "";
 }
 public static String  _stopbanner_click() throws Exception{
